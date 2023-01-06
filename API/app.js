@@ -21,12 +21,13 @@ var corsOption = {
 app.use(cors(corsOption));
 
 var roleRoutes = require("./routes/role.routes.js");
-
+var companyRoutes = require("./routes/company.routes.js");
 
 app.use(helmet());
 app.use(express.json());
 //app.use(cookieParser());
 
 app.use("/api/roles", roleRoutes);
+app.use("/api/companies", companyRoutes);
 
 module.exports = app;
