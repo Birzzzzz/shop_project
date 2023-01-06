@@ -23,7 +23,7 @@ exports.createCompany = (req,result) => {
             return;
         }
         if(!res){
-            result.status(200).send({
+            result.status(201).send({
                 message:"L'entreprise avec le nom : " + company.name + " existe déjà."
             });
             console.log(date + " : L'entreprise avec le nom : " + company.name + " existe déjà (api/companies/addCompany).");
