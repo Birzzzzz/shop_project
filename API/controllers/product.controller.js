@@ -42,14 +42,14 @@ exports.findAll = (req,result) => {
             return;
         }
         if(res.length){
-            result.status(404).send({
-                message:"Il n'y a pas de produits dans la base de données."
-            });
-            console.log(date + " : Il n'y a pas de produits dans la base de données (api/products/).");
+            result.status(200).send(res);
+            console.log(date + " : Les données ont bien été envoyer (api/products/).");
             return;
         }
-        result.status(200).send(res);
-        console.log(date + " : Les données ont bien été envoyer (api/products/).");
+        result.status(404).send({
+            message:"Il n'y a pas de produits dans la base de données."
+        });
+        console.log(date + " : Il n'y a pas de produits dans la base de données (api/products/).");
         return;
     });
 };
